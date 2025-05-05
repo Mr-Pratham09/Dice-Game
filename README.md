@@ -1,8 +1,34 @@
-# React + Vite
+# Dice-Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Developed a simple and interactive Dice Game where players roll a dice and receive a randomized outcome, Used React State & Event Handling to create a smooth and dynamic user experience.
 
-Currently, two official plugins are available:
+## Built With
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React.js
+- Vite
+
+## Installation
+
+To run this project locally:
+
+1. Clone the Repository:
+```bash
+git clone https://github.com/Mr-Pratham09/Dice-Game.git
+```
+
+2. Navigate to the project folder:
+```bash
+cd Dice-Game
+```
+
+3. Install the dependencies:
+```bash
+npm install
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+Now, you can open your browser and go to http://localhost:3000 to view the app!
