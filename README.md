@@ -2,6 +2,8 @@
 
 Developed a simple and interactive Dice Game where players roll a dice and receive a randomized outcome, Used React State & Event Handling to create a smooth and dynamic user experience.
 
+[Live Demo](https://beautiful-trifle-cdb329.netlify.app/)
+
 ## Built With
 
 - React.js
