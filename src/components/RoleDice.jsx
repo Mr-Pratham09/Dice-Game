@@ -1,71 +1,43 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Button } from '../styled/Button'
-import { OutlineButton } from '../styled/Button'
-
 const RoleDice = ({ currentDice, roleDice, resetScore, showRules, setshowRules }) => {
 
-    const toggle = () => {
-        setshowRules((prev) => !prev)
-    }
+  const toggle = () => {
+    setshowRules((prev) => !prev)
+  }
 
-    return (
-        <DiceContainer>
-            <div className='dice' onClick={roleDice}>
-                <img src={`images/dices/dice_${currentDice}.png`} alt="" />
-                <p>Click on dice to roll</p>
-            </div>
-            <div className="btns">
-                <OutlineButton onClick={resetScore} className='diceBtn'>Reset Score</OutlineButton>
-                <Button onClick={toggle} className='diceBtn'>{showRules ?  "Hide Rules" : "Show Rules"}</Button>
-            </div>
-        </DiceContainer>
-    )
+  return (
+    <div className="max-w-50 flex flex-col justify-center items-center mt-7.5 border-2 border-red-500">
+
+      <div className="cursor-pointer border-2 border-red-500" onClick={roleDice}>
+        <img
+          src={`images/dices/dice_${currentDice}.png`}
+          alt=""
+          className="w-42 border-2 border-red-500"
+        />
+        <p className="font-medium text-[17px] text-center border-2 border-red-500">
+          Click on dice to roll
+        </p>
+      </div>
+
+      <div className="flex flex-col justify-center items-center gap-2.5 mt-6 border-2 border-red-500">
+        
+        <button
+          onClick={resetScore}
+          className="bg-black text-white w-40 cursor-pointer rounded-lg h-12 text-sm font-semibold outline-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black"
+        >
+          Reset Score
+        </button>
+
+        <button
+          onClick={toggle}
+          className="bg-black text-white w-40 cursor-pointer rounded-lg h-12 text-sm font-semibold outline-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black"
+        >
+          {showRules ? "Hide Rules" : "Show Rules"}
+        </button>
+
+      </div>
+
+    </div>
+  )
 }
-
-const DiceContainer = styled.div`
-    max-width: 200px;
-    margin: 0 auto;
-    /* min-height: 450px; */
-    /* border: 2px solid red; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-top: 30px;
-
-    .dice {
-        cursor: pointer;
-        /* border: 2px solid red; */
-
-        img {
-            width: 170px;
-        }
-
-        p {
-        /* width: 230px; */
-        font-weight: 500;
-        font-size: 17px;
-        text-align: center;
-        }
-    }
-
-    .btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 1.5rem;
-
-        .diceBtn {
-        margin-left: 0;
-        width: 160px;
-        font-size: 13px;
-        }
-
-    }
-
-`
 
 export default RoleDice

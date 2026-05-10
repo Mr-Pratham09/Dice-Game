@@ -1,49 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-
 const TotalScore = ({ score }) => {
+  return (
+      <div className="max-w-full mx-auto h-50 flex justify-between items-center border-2 border-red-500">
 
-    return (
-        <ScoreContainer>
-            <div className='header'>
-                <div className='score'>
-                    <h1>{score}</h1>
-                    <p>Total Score</p>
-                </div>
-            </div>
-        </ScoreContainer>
-    )
+        <div className="w-fit border-2 border-red-500">
+          <h1 className="text-center font-medium border-2 border-red-500 text-[60px] leading-15">
+            {score}
+          </h1>
+          <p className="border-2 border-red-500 font-medium text-[18px] leading-7.5">
+            Total Score
+          </p>
+        </div>
+
+      </div>
+  )
 }
-
-
-const ScoreContainer = styled.div`
-.header {
-    max-width: 100%;
-    /* border: 2px solid red; */
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .score {
-        width: fit-content;
-        /* border: 2px solid red; */
-        
-        h1 {
-            text-align: center;
-            font-weight: 500;
-            font-size: 60px;
-            line-height: 60px;
-        }
-        p {
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 30px;
-        }
-    }
-
-    
-}
-`
 
 export default TotalScore
