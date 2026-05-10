@@ -7,11 +7,17 @@
   font-family: "Poppins", serif;
 }
 
-/* .error-space {
-  margin-bottom: 10px;
-} */
-
-.number-space {
-  height: 30px;
+.error-space {
+  height: 50px;
   padding-top: 10px;
+}
+
+
+.dice-height {
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border: none;
 }

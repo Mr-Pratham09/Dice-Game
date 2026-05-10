@@ -21,9 +21,9 @@ const SelectNumber = ({ selectedNumber, setSelectedNumber, error, setError }) =>
                             <span
                                 key={index}
                                 onClick={() => numberErrorHandler(value)}
-                                className={`border rounded-full border-black w-18 flex justify-center items-center font-bold text-[25px] cursor-pointer transition-all duration-200 ${value === selectedNumber
+                                className={`rounded-full w-18 flex justify-center items-center font-bold text-[25px] cursor-pointer transition-all duration-200 ${value === selectedNumber
                                     ? "bg-black text-white"
-                                    : "bg-white text-black hover:bg-gray-50 hover:scale-105"
+                                    : "bg-gray-200 text-black hover:bg-gray-300 hover:scale-105"
                                     }`}
                             >
                                 {value}

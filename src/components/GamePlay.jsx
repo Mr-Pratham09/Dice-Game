@@ -3,14 +3,16 @@ import TotalScore from './TotalScore'
 import SelectNumber from './SelectNumber'
 import RoleDice from './RoleDice'
 import Rules from './Rules'
+import BackButton from './BackButton'
 
-const GamePlay = () => {
+const GamePlay = ({ toggle }) => {
 
   const [score, setScore] = useState(0)
   const [error, setError] = useState('')
   const [selectedNumber, setSelectedNumber] = useState(undefined)
   const [currentDice, setCurrentDice] = useState(1)
   const [showRules, setShowRules] = useState(false)
+  const [isRolling, setIsRolling] = useState(false)
 
   const generateRandomNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min)
@@ -21,17 +23,22 @@ const GamePlay = () => {
       setError('You have not selected any number')
       return
     }
+    setIsRolling(true)
 
-    const randomNumber = generateRandomNumber(1, 7)
-    setCurrentDice(randomNumber)
+    setTimeout(() => {
 
-    if (selectedNumber == randomNumber) {
-      setScore((prev) => prev + randomNumber)
-    } else {
-      setScore((prev) => prev - 2)
-    }
+      const randomNumber = generateRandomNumber(1, 7)
+      setCurrentDice(randomNumber)
 
-    setSelectedNumber(undefined)
+      if (selectedNumber == randomNumber) {
+        setScore((prev) => prev + randomNumber)
+      } else {
+        setScore((prev) => prev - 2)
+      }
+
+      setSelectedNumber(undefined)
+      setIsRolling(false)
+    }, 500);
   }
 
   const resetScore = () => {
@@ -54,8 +61,11 @@ const GamePlay = () => {
       {/* ✅ Content */}
       <div className="relative border-2 border-red-500">
 
-        <div className="flex justify-evenly h-50 items-center gap-120 border-2 border-red-500">
-          <TotalScore score={score} />
+        <div className="flex h-50 items-center justify-around gap-80 border-2 border-red-500">
+          <div className='flex justify-between items-center'>
+            <BackButton toggle={toggle} />
+            <TotalScore score={score} toggle={toggle} />
+          </div>
           <SelectNumber
             selectedNumber={selectedNumber}
             setSelectedNumber={setSelectedNumber}
@@ -64,16 +74,23 @@ const GamePlay = () => {
           />
         </div>
 
-        <div className='flex justify-evenly items-center flex-col h-123  border-2 border-red-500'>
-        <RoleDice
-          currentDice={currentDice}
-          roleDice={roleDice}
-          resetScore={resetScore}
-          showRules={showRules}
-          setshowRules={setShowRules}
-        />
-
-        {showRules && <Rules />}
+        <div className='flex items-center justify-start flex-col h-123  border-2 border-red-500'>
+          <RoleDice
+            currentDice={currentDice}
+            roleDice={roleDice}
+            resetScore={resetScore}
+            showRules={showRules}
+            setshowRules={setShowRules}
+            isRolling={isRolling}
+          />
+          <div
+            className={`transition-all duration-800 ease-in-out overflow-hidden ${showRules
+                ? "max-h-96 opacity-100 mt-5"
+                : "max-h-0 opacity-0"
+              }`}
+          >
+            <Rules />
+          </div>
         </div>
 
       </div>
