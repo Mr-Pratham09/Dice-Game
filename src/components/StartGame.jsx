@@ -1,50 +1,25 @@
-import styled from 'styled-components'
-import { Button } from '../styled/Button'
-
 const StartGame = ({ toggle }) => {
 
     return (
-        <Container>
-            <div className='left'>
-                <img src="/images/dices.png" alt="" />
+        <div className='min-h-screen flex justify-between items-center '>
+            <div className='w-1/2 flex justify-center items-center overflow-hidden'>
+                <img src="/images/dices.png" alt="" className="transition-transform duration-300 ease-in-out hover:scale-105 hover:rotate-3" />
             </div>
-            <div className='right'>
-                <h1>Dice Game</h1>
-                <Button onClick={toggle}>Play Now</Button>  
+
+            <div className='w-1/2 flex flex-col justify-center items-center gap-5 h-[60vh]'>
+                <h1 className='text-center text-[96px] font-bold leading-36'>
+                    Dice Game
+                </h1>
+
+                <p className="text-center text-gray-600 text-lg font-bold">
+                    Test your luck and strategy in this exciting dice game. <br />
+                    Pick a number, roll the dice, and see if fortune is on your side!
+                </p>
+
+              <button className="bg-black text-white w-56 cursor-pointer border border-transparent rounded-lg h-12 text-xl font-semibold outline-none transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:border-black" onClick={toggle}>Play Now</button>
             </div>
-        </Container>
+        </div>
     )
 }
-
-const Container = styled.div`
-    /* border: 2px solid red; */
-    max-width: 90vw;
-    margin: 0 auto;
-    min-height: 85vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-.left {
-    /* border: 2px solid red; */
-    width: 55%;
-}
-
-.right {
-    /* border: 2px solid red; */
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-h1 {
-    text-align: center;
-    /* border: 2px solid red; */
-    font-size: 96px;
-    font-weight: 700;
-    line-height: 144px;
-}
-}
-`
 
 export default StartGame
