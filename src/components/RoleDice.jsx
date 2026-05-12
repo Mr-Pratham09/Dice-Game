@@ -1,3 +1,5 @@
+import React from "react"
+
 const RoleDice = ({ currentDice, roleDice, resetScore, showRules, setshowRules, isRolling }) => {
 
   const toggle = () => {
@@ -5,23 +7,23 @@ const RoleDice = ({ currentDice, roleDice, resetScore, showRules, setshowRules, 
   }
 
   return (
-    <div className="max-w-50 flex flex-col items-center dice-height mt-7.5 border-2 border-red-500">
+    <div className="max-w-50 flex flex-col items-center dice-height mt-7.5">
 
-      <div className="cursor-pointer border-2 border-red-500" onClick={roleDice}>
+      <div onClick={roleDice}>
         <img
           src={`images/dices/dice_${currentDice}.png`}
           alt="laoding"
-          className={`w-42 border-2 border-red-500 transition-transform duration-500 ease-in-out ${
-            isRolling ? "rotate-720 scale-110" : "rotate-0 scale-100"
+          className={`w-42 transition-transform duration-500 ease-in-out ${
+            isRolling ? "rotate-720 scale-110" : "rotate-0 scale-100 cursor-pointer"
           }`}
         />
 
-        <p className="font-medium text-[14px] text-center border-2 border-red-500">
+        <p className="font-medium text-[14px] text-center">
           Click on dice to roll
         </p>
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-2.5 mt-6 border-2 border-red-500">
+      <div className="flex flex-col justify-center items-center gap-2.5 mt-6">
         
         <button
           onClick={resetScore}

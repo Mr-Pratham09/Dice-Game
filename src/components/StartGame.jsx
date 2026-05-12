@@ -1,3 +1,5 @@
+import React from "react"
+
 const StartGame = ({ toggle }) => {
   return (
     <div className="relative min-h-screen flex justify-between items-center">
@@ -16,7 +18,7 @@ const StartGame = ({ toggle }) => {
       <div className="relative w-full flex justify-between items-center">
 
         <div className="w-1/2 text-center overflow-hidden">
-          <img className='inline-block transition-transform duration-500 ease-in-out hover:scale-105' src="/images/dices.png" alt="" />
+          <img className='inline-block transition-transform duration-500 ease-in-out hover:scale-105' src="/images/dices.png" alt="image" />
         </div>
 
         <div className="w-1/2 flex flex-col justify-center items-center gap-5 h-[60vh]">

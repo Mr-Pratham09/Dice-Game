@@ -1,3 +1,5 @@
+import React from "react"
+
 const SelectNumber = ({ selectedNumber, setSelectedNumber, error, setError }) => {
 
     const arr = [1, 2, 3, 4, 5, 6]
@@ -8,14 +10,14 @@ const SelectNumber = ({ selectedNumber, setSelectedNumber, error, setError }) =>
     }
 
     return (
-        <div className="w-137 h-50 flex flex-col border-2 border-red-500">
+        <div className="w-137 h-50 flex flex-col">
 
-            <div className="error-space border-2 border-red-500">
-                <p className="text-end border-2 font-bold border-red-500 text-red-500 pt-15">{error}</p>
+            <div className="error-space ">
+                <p className="text-end font-bold text-red-500 pt-15">{error}</p>
             </div>
 
-            <div className="border-2 border-red-500">
-                <div className="flex justify-between h-17.5 border-2 border-red-500 overflow-hidden">
+            <div className="flex flex-col gap-4">
+                <div className="flex gap-5 justify-between h-17.5">
                     {
                         arr.map((value, index) => (
                             <span
@@ -33,8 +35,8 @@ const SelectNumber = ({ selectedNumber, setSelectedNumber, error, setError }) =>
                 </div>
 
 
-                <p className="text-end font-bold text-[20px] border-2 border-red-500">
-                    Select Number
+                <p className="text-end font-bold text-[20px] ">
+                    Select any Number
                 </p>
             </div>
 

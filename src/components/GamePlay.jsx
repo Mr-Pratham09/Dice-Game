@@ -48,20 +48,17 @@ const GamePlay = ({ toggle }) => {
   return (
     <main className="relative min-h-screen">
 
-      {/* ✅ Background Image */}
       <img
         src="/images/dice-bg.jpg"
         alt="background"
         className="absolute inset-0 w-full h-full object-cover opacity-20"
       />
 
-      {/* ✅ Overlay */}
       <div className="absolute inset-0 bg-black/30"></div>
 
-      {/* ✅ Content */}
-      <div className="relative border-2 border-red-500">
+      <div className="relative">
 
-        <div className="flex h-50 items-center justify-around gap-80 border-2 border-red-500">
+        <div className="flex h-50 items-center justify-around gap-80">
           <div className='flex justify-between items-center'>
             <BackButton toggle={toggle} />
             <TotalScore score={score} toggle={toggle} />
@@ -74,7 +71,7 @@ const GamePlay = ({ toggle }) => {
           />
         </div>
 
-        <div className='flex items-center justify-start flex-col h-123  border-2 border-red-500'>
+        <div className='flex items-center justify-start flex-col h-123 '>
           <RoleDice
             currentDice={currentDice}
             roleDice={roleDice}
@@ -83,12 +80,7 @@ const GamePlay = ({ toggle }) => {
             setshowRules={setShowRules}
             isRolling={isRolling}
           />
-          <div
-            className={`transition-all duration-800 ease-in-out overflow-hidden ${showRules
-                ? "max-h-96 opacity-100 mt-5"
-                : "max-h-0 opacity-0"
-              }`}
-          >
+          <div className={`transition-all duration-800 ease-in-out overflow-hidden ${showRules ? "max-h-96 opacity-100 mt-5" : "max-h-0 opacity-0"}`}>
             <Rules />
           </div>
         </div>
