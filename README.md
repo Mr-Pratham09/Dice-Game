@@ -4,7 +4,7 @@ An interactive and responsive Dice Game built with React.js where players select
 
 ## Live Demo
 
-[Live Demo](https://dice-game-dy86-git-master-pratham-gautams-projects.vercel.app/)
+[Live Demo](https://dice-game-umber-psi.vercel.app/)
 
 ## Features
 
