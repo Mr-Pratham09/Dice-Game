@@ -46,23 +46,24 @@ const GamePlay = ({ toggle }) => {
   }
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-hidden">
 
       <img
         src="/images/dice-bg.jpg"
         alt="background"
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-20"
       />
 
       <div className="absolute inset-0 bg-black/30"></div>
 
-      <div className="relative">
+      <div className="relative px-4 md:px-0">
 
-        <div className="flex h-50 items-center justify-around gap-80">
-          <div className='flex justify-between items-center'>
+        <div className="flex flex-col md:flex-row h-auto md:h-50 items-center justify-center md:justify-around gap-4 md:gap-80 pt-5 md:pt-0">
+          <div className="flex justify-center md:justify-between items-center gap-4 md:gap-0">
             <BackButton toggle={toggle} />
             <TotalScore score={score} toggle={toggle} />
           </div>
+
           <SelectNumber
             selectedNumber={selectedNumber}
             setSelectedNumber={setSelectedNumber}
@@ -71,7 +72,7 @@ const GamePlay = ({ toggle }) => {
           />
         </div>
 
-        <div className='flex items-center justify-start flex-col h-123 '>
+        <div className="flex items-center justify-start flex-col h-auto md:h-123 mt-5 md:mt-0">
           <RoleDice
             currentDice={currentDice}
             roleDice={roleDice}
@@ -80,7 +81,8 @@ const GamePlay = ({ toggle }) => {
             setshowRules={setShowRules}
             isRolling={isRolling}
           />
-          <div className={`transition-all duration-800 ease-in-out overflow-hidden ${showRules ? "max-h-96 opacity-100 mt-5" : "max-h-0 opacity-0"}`}>
+
+          <div className={`w-full flex justify-center transition-all duration-800 ease-in-out overflow-hidden ${showRules ? "max-h-96 opacity-100 mt-5" : "max-h-0 opacity-0"}`}>
             <Rules />
           </div>
         </div>
